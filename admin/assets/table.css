@@ -1,0 +1,53 @@
+/* CSS for table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Optional: Hover effect on table rows */
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Optional: Style for header/menu */
+header {
+  /* background-color: #333; */
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+ul.header-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.header-menu li {
+  display: inline;
+  margin-right: 10px;
+}
+
+ul.header-menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+ul.header-menu li a:hover {
+  text-decoration: underline;
+}

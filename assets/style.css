@@ -1,0 +1,64 @@
+/* Login page */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #3494e6, #ec6ead);
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    margin-inline: 20px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Increase the width of the text fields */
+input {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-inline: 20px;
+    /* Adjust the width as needed */
+    /* width: 100%; */
+    /* You can specify a fixed width or a percentage */
+}
+
+button {
+    background: linear-gradient(135deg, #4e7eff, #28a2eb);
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-inline: 20px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #28a2eb, #4e7eff);
+}
