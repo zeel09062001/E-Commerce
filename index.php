@@ -16,7 +16,6 @@
             margin-top: 10px;
             margin-bottom: 20px;
             border: none;
-            border-radius: 4px;
         }
     </style>
     <script>
