@@ -20,18 +20,18 @@
         }
     </style>
     <script>
-        $(document).ready(function () {
-            $("#orderForm").submit(function (event) {
+        $(document).ready(function() {
+            $("#orderForm").submit(function(event) {
                 event.preventDefault();
 
                 $.ajax({
                     type: "POST",
-                    url: "shopping.php", 
+                    url: "shopping.php",
                     data: $(this).serialize(),
-                    success: function (response) {
+                    success: function(response) {
                         alert("Order submitted successfully!");
                     },
-                    error: function (error) {
+                    error: function(error) {
                         console.log(error);
                         alert("Error submitting order. Please try again.");
                     }
@@ -42,59 +42,59 @@
 </head>
 
 <body>
-    <?php include('assets/header.php'); ?>
-    
 
     <section class="orders-container">
 
         <form method="post" action="shopping.php">
-        <h1><center>Product</center></h1>
-        <div class="order-item">
-            <div class="order-details">
-                <img src="assets/Images/first.webp" alt="Product Image">
-                <div class="text-details">
-                    <h3>Product A</h3>
-                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p>Price: $19.99</p>
-                    <input type="number" name="pid" id="pid" value="1" hidden>
+            <h1>
+                <center>Product</center>
+            </h1>
+            <div class="order-item">
+                <div class="order-details">
+                    <img src="assets/Images/first.webp" alt="Product Image">
+                    <div class="text-details">
+                        <h3>Product A</h3>
+                        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Price: $19.99</p>
+                        <input type="number" name="pid" id="pid" value="1" hidden>
 
-                    <input type="submit" name="buy" value="Buy">
+                        <input type="submit" name="buy" value="Buy">
+                    </div>
                 </div>
             </div>
-        </div>
         </form>
 
         <form method="post" action="shopping.php">
-        <div class="order-item">
-            <div class="order-details">
-                <img src="assets/Images/secound.jpeg" alt="Product Image">
-                <div class="text-details">
-                    <h3>Product B</h3>
-                    <p>Description: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Price: $29.99</p>
-                    <input type="number" name="pid" id="pid" value="2" hidden>
+            <div class="order-item">
+                <div class="order-details">
+                    <img src="assets/Images/secound.jpeg" alt="Product Image">
+                    <div class="text-details">
+                        <h3>Product B</h3>
+                        <p>Description: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Price: $29.99</p>
+                        <input type="number" name="pid" id="pid" value="2" hidden>
 
-                    <input type="submit" name="buy" value="Buy">
-            
+                        <input type="submit" name="buy" value="Buy">
+
+                    </div>
                 </div>
             </div>
-        </div>
         </form>
 
         <form method="post" action="shopping.php">
-        <div class="order-item">
-            <div class="order-details">
-                <img src="assets/Images/third.jpeg" alt="Product Image">
-                <div class="text-details">
-                    <h3>Product C</h3>
-                    <p>Description: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Price: $39.99</p>
-                    <input type="number" name="pid" id="pid" value="3" hidden>
+            <div class="order-item">
+                <div class="order-details">
+                    <img src="assets/Images/third.jpeg" alt="Product Image">
+                    <div class="text-details">
+                        <h3>Product C</h3>
+                        <p>Description: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Price: $39.99</p>
+                        <input type="number" name="pid" id="pid" value="3" hidden>
 
-                    <input type="submit" name="buy" value="Buy">
+                        <input type="submit" name="buy" value="Buy">
+                    </div>
                 </div>
             </div>
-        </div>
         </form>
     </section>
 </body>
