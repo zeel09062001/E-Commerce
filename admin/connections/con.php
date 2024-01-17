@@ -8,5 +8,3 @@ $password = "";
 $dbname = "product";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
-
-?>

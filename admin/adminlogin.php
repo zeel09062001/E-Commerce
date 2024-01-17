@@ -1,36 +1,37 @@
 <?php
 session_start();
 
-error_reporting(0); 
+error_reporting(0);
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 include('connections/con.php');
 
 if (isset($_POST['login'])) {
-  $username = $_POST['username'];
-  $password = $_POST['password'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-  $sql = "SELECT * FROM admin WHERE username = ? AND password = ?";
-  $query = $conn->prepare($sql);
-  $query->bind_param('ss', $username, $password);
-  $query->execute();
-  $result = $query->get_result();
+    $sql = "SELECT * FROM admin WHERE username = ? AND password = ?";
+    $query = $conn->prepare($sql);
+    $query->bind_param('ss', $username, $password);
+    $query->execute();
+    $result = $query->get_result();
 
-  
-  if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
 
-    $_SESSION['username'] = $username;
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
 
-    if(isset($row['status'])){
-        $_SESSION['status'] = $row['status'];
-    }
-    $_SESSION['status'] = $status;
-    header("Location: addadmin.php");
-  } 
+        $_SESSION['username'] = $username;
 
-  else {
+        if (isset($row['status'])) {
+            $_SESSION['status'] = $row['status'];
+        }
+        $_SESSION['status'] = $status;
+        header("Location: addadmin.php");
+    } else {
         $loginError = "Invalid username or password";
-    } 
+    }
 }
 
 
@@ -43,7 +44,7 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
-    
+
     <style>
         input {
             background: linear-gradient(135deg, #4e7eff, #28a2eb);
@@ -76,7 +77,7 @@ if (isset($_POST['login'])) {
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        
+
         <form method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
@@ -85,7 +86,7 @@ if (isset($_POST['login'])) {
             <input type="password" id="password" name="password" required>
 
             <input type="submit" name="login" value="Login">
-            
+
             <a href="../index.php">Cancel</a>
         </form>
     </div>
